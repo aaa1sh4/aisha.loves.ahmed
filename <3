@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aisha.loves.ahmed</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+      color: #5a2d47;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #d63384;
+      text-shadow: 2px 2px #fff;
+    }
+    .button {
+      background: #ff80bf;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .button:hover {
+      transform: scale(1.1);
+    }
+    .letter {
+      display: none;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff0f8;
+      border-radius: 2rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      font-size: 1.3rem;
+      line-height: 2;
+      text-align: left;
+      white-space: pre-line;
+      position: relative;
+    }
+    iframe {
+      margin-top: 2rem;
+      border-radius: 1rem;
+      width: 80%;
+      height: 200px;
+    }
+    .hearts, .bows {
+      position: fixed;
+      top: -50px;
+      font-size: 1.5rem;
+      animation: floatDown 8s linear infinite;
+      z-index: 999;
+    }
+    @keyframes floatDown {
+      0% { transform: translateY(-50px) translateX(0); opacity: 1; }
+      100% { transform: translateY(110vh) translateX(20px); opacity: 0; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>💌 aisha.loves.ahmed 💌</header>
+  <button class="button" onclick="openLetter()">Open My Letter 💖</button>
+
+  <div id="letter" class="letter">
+    <p>
+Happy birthday my love<3, my baby, my sweet boy, my love, my beautiful boy, my gorgeous, my sweet, my adorable, my handsome, my lovely, my charming, my genius, my loyal, my kind, my precious loving husband, sometimes I wonder if words will ever be enough to hold the size of my love for you... (rest of your very long love letter stays the same) ... And last but not least, happy birthday my beautiful boy davi<3 your loving wife, Aisha.
+    </p>
+    <img src="d07133875796b10167d9eb5598f71288.jpg" alt="cute kitty holding heart" style="width:150px; margin-top:2rem;" />
+    <iframe src="https://www.youtube.com/embed/4_jHhH5jN7s" title="Golden Brown - The Stranglers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <script>
+    function openLetter() {
+      document.getElementById('letter').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('letter').offsetTop, behavior: 'smooth' });
+    }
+
+    function createFloatingElements(symbol, className) {
+      setInterval(() => {
+        const elem = document.createElement('div');
+        elem.className = className;
+        elem.innerHTML = symbol;
+        elem.style.left = Math.random() * 100 + 'vw';
+        elem.style.animationDuration = (5 + Math.random() * 5) + 's';
+        document.body.appendChild(elem);
+        setTimeout(() => elem.remove(), 10000);
+      }, 1500);
+    }
+
+    createFloatingElements('💗', 'hearts');
+    createFloatingElements('🎀', 'bows');
+  </script>
+</body>
+</html>
